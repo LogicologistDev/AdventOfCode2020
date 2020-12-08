@@ -23,9 +23,7 @@ public class DayEight {
     public static void partOne(List<String> inputs) {
         int accum = 0;
         int index = 0;
-
         List<Integer> usedIndexes = new ArrayList<>();
-
         while (true) {
             usedIndexes.add(index);
             if (inputs.get(index).contains("nop")) {
@@ -46,18 +44,14 @@ public class DayEight {
                 break;
             }
         }
-
         System.out.println(accum);
     }
 
     public static void partTwo(List<String> inputs) {
         for (int i = 0; i < inputs.size(); i++) {
-
             if (!inputs.get(i).contains("nop") && !inputs.get(i).contains("jmp")) continue;
-
             List<String> newInstruct = new ArrayList<>(inputs);
             newInstruct.set(i, (inputs.get(i).contains("nop") ? "jmp " : "nop ") + inputs.get(i).split(" ")[1]);
-
             if (causesLoop(newInstruct) == -1) continue;
             System.out.println(causesLoop(newInstruct));
             return;
