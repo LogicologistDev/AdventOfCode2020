@@ -33,7 +33,6 @@ public class DayEleven {
 
     public static void partOne(List<Seat> config) {
         List<Seat> lastConfig = new ArrayList<>(config);
-
         List<Seat> newConfig = new ArrayList<>();
         HashMap<String, Seat> plane = new HashMap<>();
         while (true) {
